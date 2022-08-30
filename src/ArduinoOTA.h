@@ -127,6 +127,10 @@ ArduinoOTAClass  <WiFiServer, WiFiClient> ArduinoOTA;
 ArduinoOTAMdnsClass <WiFiServer, WiFiClient, WiFiUDP> ArduinoOTA;
 #endif
 
+#elif defined(WIFININA_GENERIC_VERSION)
+#include <WiFiUdp_Generic.h>
+ArduinoOTAMdnsClass <WiFiServer, WiFiClient, WiFiUDP> ArduinoOTA;
+
 #elif defined(_WIFI_ESP_AT_H_) && !defined(WIFIESPAT1) && !defined(NO_OTA_PORT) // WiFiEspAT with AT2 has UDP multicast
 ArduinoOTAMdnsClass  <WiFiServer, WiFiClient, WiFiUDP> ArduinoOTA;
 
